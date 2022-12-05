@@ -1,36 +1,41 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
-        int[] weight = {10, 20, 30, 40, 50, 60, 70, 80, 90};
-        int[] weights = {102, 20, 30, 40, 50, 60, 70, 80, 90};
-        for (int i = 0; i < weight.length; i++) {
-            System.out.println(weights[i]);
+        System.out.println("Домашнее задание");
+        //Задача 1
+        System.out.println("Задача 1");
+        int[] array = generateRandomArray(30);
+        int total = 0;
+        for (int i : array) {
+            total = total + i;
         }
-            boolean arraysAreEqual = true;
-            arraysAreEqual = weight.length == weights.length;
-            if (arraysAreEqual) {
-                for (int i = 0; i < weight.length; i++) {
-                    if (weight[i] != weights[i]) {
-                        arraysAreEqual = false;
-                    }
-                }
+        for (int i = 0; i < array.length; i++) {
+            System.out.println("траты " + (i + 1) + " день "  + array[i] + " ");
+        }
+        System.out.println("Сумма трат за месяц составила " + total + " рублей");
+        //Задача 2
+        System.out.println("Задача 2");
+        int maxExpenses = -1;
+        int minExpenses = 200_000;
+        for (final int current : array) {
+            if (current > maxExpenses) {
+                maxExpenses = current;
             }
-        if (arraysAreEqual){
-            System.out.println("массивы одинаковые");
-        }else {
-            System.out.println("Массивы разные");
-        }
-        int maxWeight = -1;
-        for (final int current : weight) {
-            if (current > maxWeight) {
-                maxWeight = current;
+            if (current < minExpenses) {
+                minExpenses = current;
             }
         }
-        System.out.println(maxWeight);
-
-
-        for (int i = 0; i < weight.length - 1 && weight[i + 1] != 0; i++) {
-            System.out.println(weight[i + 1] - weight[i]);
-        }
-        }
+        System.out.println("Минимальная сумма трат за день составила " + minExpenses + " рублей. Максимальная сумма трат за день составила " + maxExpenses + " рублей");
+        //Задача 3
+        System.out.println("Задача 3");
+        System.out.println("Средняя сумма трат за месяц составила " + total/ array.length + " рублей");
     }
+        public static int[] generateRandomArray(int length) {
+        java.util.Random random = new java.util.Random();
+        int[] array = new int[length];
+        for (int i = 0; i < length; i++) {
+            array[i] = random.nextInt(100_000) + 100_000;
+        }
+        return array;
+    }
+}
+
