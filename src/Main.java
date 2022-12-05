@@ -28,6 +28,13 @@ public class Main {
         //Задача 3
         System.out.println("Задача 3");
         System.out.println("Средняя сумма трат за месяц составила " + total/ array.length + " рублей");
+        //Задача 4
+        System.out.println("Задача 4");
+        char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        for (int i = reverseFullName.length - 1; i >= 0; i--) {
+            System.out.print(reverseFullName[i]);
+        }
+
     }
         public static int[] generateRandomArray(int length) {
         java.util.Random random = new java.util.Random();
@@ -38,4 +45,3 @@ public class Main {
         return array;
     }
 }
-
